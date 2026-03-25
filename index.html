@@ -1,0 +1,1288 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Донна Роза | Премиальный магазин цветов</title>
+    <meta
+      name="description"
+      content="Донна Роза — премиальные букеты, авторские композиции и цветочное оформление событий в русском минималистичном стиле."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canvas: "#f6eee7",
+              blush: "#ead6d2",
+              petal: "#f4e7e4",
+              rose: "#d5a7ad",
+              wine: "#7d2742",
+              mulberry: "#5d1930",
+              cocoa: "#8d7068",
+              gold: "#cfaa7b",
+            },
+            boxShadow: {
+              soft: "0 24px 80px rgba(77, 34, 45, 0.10)",
+              card: "0 20px 60px rgba(90, 40, 50, 0.12)",
+            },
+            backgroundImage: {
+              grain:
+                "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 32%), radial-gradient(circle at 80% 15%, rgba(255,255,255,0.14), transparent 22%), radial-gradient(circle at 50% 80%, rgba(125,39,66,0.08), transparent 34%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 35%),
+          linear-gradient(180deg, #eddcd5 0%, #f5eee8 28%, #f3ece5 58%, #ead7d5 100%);
+        color: #4d3740;
+      }
+
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: "Cormorant Garamond", serif;
+        text-wrap: balance;
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      .eyebrow {
+        letter-spacing: 0.32em;
+      }
+
+      .display-hero {
+        font-size: clamp(2.9rem, 10vw, 5.5rem);
+        line-height: 0.88;
+        letter-spacing: -0.035em;
+      }
+
+      .section-title {
+        font-size: clamp(2.15rem, 7.5vw, 4rem);
+        line-height: 0.96;
+        letter-spacing: -0.025em;
+      }
+
+      .card-title {
+        font-size: clamp(2rem, 6.4vw, 3rem);
+        line-height: 0.96;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-copy {
+        max-width: 20rem;
+      }
+
+      .hero-lead {
+        font-size: clamp(1rem, 2.1vw, 1.15rem);
+        line-height: 1.85;
+      }
+
+      .price-primary {
+        font-size: clamp(2.45rem, 6.5vw, 4rem);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+      }
+
+      .price-secondary {
+        font-size: clamp(1.95rem, 5.3vw, 3rem);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+
+      .metric-value {
+        font-size: clamp(1.9rem, 5vw, 3rem);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+
+      .mobile-nav-link {
+        border: 1px solid rgba(125, 39, 66, 0.06);
+      }
+
+      .mobile-nav-link:hover {
+        background: rgba(255, 255, 255, 0.55);
+      }
+
+      .shell {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .shell::before,
+      .shell::after {
+        content: "";
+        position: fixed;
+        inset: auto;
+        border-radius: 999px;
+        filter: blur(6px);
+        pointer-events: none;
+        z-index: -2;
+      }
+
+      .shell::before {
+        top: 90px;
+        left: -80px;
+        width: 340px;
+        height: 340px;
+        background: radial-gradient(circle, rgba(211, 169, 174, 0.32) 0%, rgba(211, 169, 174, 0) 68%);
+      }
+
+      .shell::after {
+        right: -120px;
+        top: 38%;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(circle, rgba(246, 226, 221, 0.75) 0%, rgba(246, 226, 221, 0) 68%);
+      }
+
+      .glass {
+        backdrop-filter: blur(14px);
+        background: rgba(255, 250, 246, 0.68);
+      }
+
+      .hero-orbit::before,
+      .hero-orbit::after {
+        content: "";
+        position: absolute;
+        inset: 10%;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .hero-orbit::after {
+        inset: 20%;
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .card-float {
+        animation: drift 11s ease-in-out infinite;
+      }
+
+      .card-float:nth-child(2) {
+        animation-delay: -3s;
+      }
+
+      .card-float:nth-child(3) {
+        animation-delay: -6s;
+      }
+
+      .ambient-ring {
+        position: absolute;
+        border-radius: 999px;
+        border: 1px solid rgba(125, 39, 66, 0.08);
+      }
+
+      .ambient-ring.one {
+        inset: -4rem auto auto -4rem;
+        width: 14rem;
+        height: 14rem;
+      }
+
+      .ambient-ring.two {
+        inset: auto -2rem -4rem auto;
+        width: 12rem;
+        height: 12rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px) scale(0.985);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .stagger > * {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .stagger.is-visible > *:nth-child(1) {
+        transition-delay: 0.06s;
+      }
+
+      .stagger.is-visible > *:nth-child(2) {
+        transition-delay: 0.14s;
+      }
+
+      .stagger.is-visible > *:nth-child(3) {
+        transition-delay: 0.22s;
+      }
+
+      .stagger.is-visible > *:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+
+      .stagger.is-visible > *:nth-child(5) {
+        transition-delay: 0.38s;
+      }
+
+      .stagger.is-visible > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .soft-border {
+        border: 1px solid rgba(125, 39, 66, 0.12);
+      }
+
+      .image-mask {
+        clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+      }
+
+      .instagram-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(125, 39, 66, 0) 45%, rgba(125, 39, 66, 0.55) 100%);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .instagram-card:hover::after {
+        opacity: 1;
+      }
+
+      .parallax {
+        transform: translate3d(0, var(--shift, 0px), 0);
+        transition: transform 0.15s linear;
+      }
+
+      .featured-carousel-track {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        overflow-x: auto;
+        padding: 0.1rem 0.1rem 0.5rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overscroll-behavior-x: contain;
+      }
+
+      .featured-carousel-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .featured-product-card {
+        flex: 0 0 calc(100% - 1rem);
+        scroll-snap-align: start;
+      }
+
+      .carousel-control {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.92);
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease,
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .carousel-control:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.26);
+        transform: translateY(-1px);
+      }
+
+      .carousel-control:disabled {
+        opacity: 0.38;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      @media (min-width: 640px) {
+        .featured-product-card {
+          flex-basis: 78%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .featured-product-card {
+          flex-basis: calc((100% - 1.25rem) / 2);
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .featured-product-card {
+          flex-basis: calc((100% - 2.5rem) / 3);
+        }
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(-1.2deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal,
+        .stagger > *,
+        .card-float,
+        .parallax {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .hero-copy {
+          max-width: 42rem;
+        }
+      }
+    </style>
+  </head>
+  <body id="top" class="shell min-h-screen overflow-x-hidden">
+    <div class="mx-auto max-w-[1440px] px-3 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-7">
+      <section
+        class="relative overflow-hidden rounded-[30px] bg-wine bg-grain px-4 pb-6 pt-4 text-white shadow-soft sm:rounded-[34px] sm:px-7 sm:pb-8 sm:pt-5 md:px-8 lg:px-10 lg:pb-10"
+      >
+        <div class="hero-orbit absolute inset-0 opacity-90"></div>
+        <div class="relative z-10">
+          <header class="mx-auto max-w-6xl">
+            <div class="glass soft-border flex items-center justify-between rounded-[28px] px-4 py-4 text-sm text-mulberry sm:hidden">
+              <div class="min-w-0">
+                <a class="font-display block whitespace-nowrap text-[1.62rem] leading-none tracking-[0.1em] text-wine" href="#top">Donna Rosa</a>
+                <a class="mt-2 block text-[0.92rem] text-mulberry/80" href="tel:+74951234567">+7 (495) 123-45-67</a>
+              </div>
+              <div class="ml-4 flex shrink-0 items-center gap-2">
+                <a
+                  class="rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-wine shadow-sm transition hover:bg-[#fff8f5]"
+                  href="#contact"
+                >
+                  Заказать
+                </a>
+                <button
+                  id="mobile-menu-button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="mobile-menu"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-wine/[0.12] bg-white/[0.72] text-wine transition hover:bg-white"
+                >
+                  <span class="sr-only">Открыть меню</span>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-[1.8]">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div id="mobile-menu" class="glass soft-border mt-3 hidden rounded-[28px] px-4 py-4 text-sm text-mulberry sm:hidden">
+              <nav class="grid gap-2">
+                <a class="mobile-nav-link rounded-[18px] px-4 py-3 transition" href="#catalog">Каталог</a>
+                <a class="mobile-nav-link rounded-[18px] px-4 py-3 transition" href="#story">О бренде</a>
+                <a class="mobile-nav-link rounded-[18px] px-4 py-3 transition" href="#wedding">Свадебная флористика</a>
+                <a class="mobile-nav-link rounded-[18px] px-4 py-3 transition" href="#reviews">Отзывы клиентов</a>
+              </nav>
+              <p class="mt-4 border-t border-wine/[0.08] pt-4 text-sm leading-6 text-cocoa">
+                Премиальная флористика с доставкой день в день и деликатным сопровождением заказа.
+              </p>
+            </div>
+
+            <div
+              class="glass soft-border mx-auto hidden max-w-6xl rounded-full px-4 py-3 text-sm text-mulberry sm:flex sm:items-center sm:justify-between sm:px-6"
+            >
+              <nav class="flex flex-wrap items-center gap-4">
+                <a class="transition hover:text-wine" href="#catalog">Каталог</a>
+                <a class="transition hover:text-wine" href="#story">О нас</a>
+                <a class="transition hover:text-wine" href="#wedding">Свадьбы</a>
+                <a class="transition hover:text-wine" href="#reviews">Отзывы</a>
+              </nav>
+              <a
+                class="font-display text-center text-2xl tracking-[0.18em] text-wine sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+                href="#top"
+              >
+                Donna Rosa
+              </a>
+              <div class="flex items-center justify-between gap-3 sm:justify-end">
+                <a class="transition hover:text-wine" href="tel:+74951234567">+7 (495) 123-45-67</a>
+                <a
+                  class="rounded-full border border-wine/20 bg-white/80 px-4 py-2 font-medium text-wine transition hover:bg-white"
+                  href="#contact"
+                >
+                  Заказать
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <div class="grid gap-8 px-1 pt-8 sm:gap-10 sm:px-2 sm:pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-4 lg:pt-16">
+            <div class="reveal hero-copy">
+              <div
+                class="eyebrow mb-5 inline-flex items-center gap-3 rounded-full border border-white/[0.15] bg-white/10 px-4 py-2 text-[0.68rem] uppercase text-white/80"
+              >
+                <span class="h-2 w-2 rounded-full bg-[#fbd4ca]"></span>
+                Премиальная флористика
+              </div>
+              <h1 class="display-hero max-w-[11.4ch] sm:max-w-3xl">
+                Авторские букеты для моментов, которые хочется запомнить.
+              </h1>
+              <p class="hero-lead mt-5 max-w-[20rem] text-white/[0.78] sm:max-w-xl">
+                «Донна Роза» создаёт деликатные цветочные композиции в эстетике современного минимализма: мягкие оттенки,
+                идеальный ритм формы и сервис уровня boutique atelier.
+              </p>
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a
+                  class="w-full rounded-full bg-white px-6 py-3.5 text-center text-sm font-semibold text-wine transition hover:scale-[1.02] hover:bg-[#fff5f1] sm:w-auto sm:text-base"
+                  href="#catalog"
+                >
+                  Смотреть коллекцию
+                </a>
+                <a
+                  class="w-full rounded-full border border-white/20 px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:text-base"
+                  href="#wedding"
+                >
+                  Оформление событий
+                </a>
+              </div>
+              <div class="mt-9 grid max-w-sm gap-4 text-sm text-white/80 sm:max-w-none sm:grid-cols-3">
+                <div class="rounded-[24px] border border-white/[0.12] bg-white/10 px-4 py-4 sm:px-5">
+                  <div class="font-display metric-value text-white">90 мин</div>
+                  <div class="mt-1 leading-6">среднее время доставки по Москве</div>
+                </div>
+                <div class="rounded-[24px] border border-white/[0.12] bg-white/10 px-4 py-4 sm:px-5">
+                  <div class="font-display metric-value text-white">7 дней</div>
+                  <div class="mt-1 leading-6">поддержка свежести и рекомендации по уходу</div>
+                </div>
+                <div class="rounded-[24px] border border-white/[0.12] bg-white/10 px-4 py-4 sm:px-5">
+                  <div class="font-display metric-value text-white">24/7</div>
+                  <div class="mt-1 leading-6">бережный сервис для личных и корпоративных заказов</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stagger relative grid grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+              <div
+                class="card-float image-mask overflow-hidden rounded-[28px] bg-white/[0.12] p-2 shadow-card sm:mt-16"
+              >
+                <img
+                  class="h-44 w-full rounded-[24px] object-cover sm:h-[20rem]"
+                  src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=80"
+                  alt="Нежный букет в светлой вазе"
+                />
+              </div>
+              <div
+                class="card-float image-mask overflow-hidden rounded-[28px] bg-white/[0.12] p-2 shadow-card"
+              >
+                <img
+                  class="h-52 w-full rounded-[24px] object-cover sm:h-[23rem]"
+                  src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=900&q=80"
+                  alt="Авторская композиция из садовых роз"
+                />
+              </div>
+              <div
+                class="card-float image-mask overflow-hidden rounded-[28px] bg-white/[0.12] p-2 shadow-card sm:mt-10"
+              >
+                <img
+                  class="h-44 w-full rounded-[24px] object-cover sm:h-[20rem]"
+                  src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=900&q=80"
+                  alt="Яркий букет в коралловых оттенках"
+                />
+              </div>
+
+              <div
+                class="glass soft-border col-span-3 mt-1 rounded-[24px] px-5 py-4 text-sm text-mulberry shadow-card sm:absolute sm:-bottom-6 sm:left-8 sm:right-auto sm:mt-0 sm:w-[19rem]"
+              >
+                <div class="font-display text-2xl text-wine">Новая весенняя капсула</div>
+                <p class="mt-2 leading-6 text-cocoa">
+                  Слоистые оттенки пудры, крема и ягодного вина для интерьерных и подарочных букетов.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main class="pb-16 pt-12 sm:pt-16">
+        <section class="reveal relative" id="catalog">
+          <div class="ambient-ring one"></div>
+          <div class="ambient-ring two"></div>
+          <div class="mx-auto max-w-6xl">
+            <div class="text-center">
+              <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">Коллекции по настроению</span>
+              <h2 class="section-title mx-auto mt-3 max-w-[13ch] text-mulberry sm:max-w-none">Подберите букет для любого повода</h2>
+            </div>
+
+            <div class="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+              <div class="space-y-5">
+                <article class="glass soft-border flex items-start gap-4 rounded-[30px] p-5 shadow-card sm:items-center">
+                  <img
+                    class="h-[4.25rem] w-[4.25rem] rounded-full object-cover sm:h-28 sm:w-28"
+                    src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?auto=format&fit=crop&w=600&q=80"
+                    alt="Букет на каждый день"
+                  />
+                  <div>
+                    <h3 class="font-display text-[1.95rem] leading-[0.95] tracking-[-0.02em] text-wine sm:text-3xl">Каждый день красиво</h3>
+                    <p class="mt-2 max-w-md text-sm leading-6 text-cocoa">
+                      Лёгкие композиции с садовой розой, ранункулюсами и сезонной зеленью для дома, кабинета или приятного жеста без повода.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="glass soft-border flex items-start gap-4 rounded-[30px] p-5 shadow-card sm:items-center">
+                  <img
+                    class="h-[4.25rem] w-[4.25rem] rounded-full object-cover sm:h-28 sm:w-28"
+                    src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=600&q=80"
+                    alt="Праздничный яркий букет"
+                  />
+                  <div>
+                    <h3 class="font-display text-[1.95rem] leading-[0.95] tracking-[-0.02em] text-wine sm:text-3xl">День рождения и праздники</h3>
+                    <p class="mt-2 max-w-md text-sm leading-6 text-cocoa">
+                      Более насыщенная палитра, многослойная сборка и выразительные формы, чтобы подарок выглядел торжественно и дорого.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="glass soft-border flex items-start gap-4 rounded-[30px] p-5 shadow-card sm:items-center">
+                  <img
+                    class="h-[4.25rem] w-[4.25rem] rounded-full object-cover sm:h-28 sm:w-28"
+                    src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80"
+                    alt="Нежный свадебный букет"
+                  />
+                  <div>
+                    <h3 class="font-display text-[1.95rem] leading-[0.95] tracking-[-0.02em] text-wine sm:text-3xl">Свадьба и особые даты</h3>
+                    <p class="mt-2 max-w-md text-sm leading-6 text-cocoa">
+                      Воздушные фактуры, мягкие пастельные переходы и филигранное исполнение для камерных торжеств и больших историй.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="relative overflow-hidden rounded-[38px] bg-[#f7efe8] p-6 shadow-soft sm:p-8">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(255,255,255,0.95),transparent_25%),radial-gradient(circle_at_30%_70%,rgba(125,39,66,0.08),transparent_28%)]"></div>
+                <div class="relative grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+                  <div>
+                    <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">Signature Selection</span>
+                    <h3 class="section-title mt-3 max-w-[13.5ch] text-mulberry sm:max-w-none">
+                      Флористика, в которой чувствуется тактильность и тишина.
+                    </h3>
+                    <p class="mt-4 max-w-md text-[0.98rem] leading-7 text-cocoa sm:text-base">
+                      Мы работаем с пластикой цветка так же внимательно, как интерьерный дизайнер работает со светом: оставляем воздух, не
+                      перегружаем и добиваемся благородного баланса.
+                    </p>
+                  </div>
+                  <div class="relative">
+                    <div class="absolute -left-6 top-4 h-28 w-28 rounded-full bg-blush/70 blur-2xl"></div>
+                    <img
+                      class="parallax relative mx-auto h-[24rem] w-full max-w-[20rem] rounded-[32px] object-cover shadow-card sm:h-[26rem] sm:max-w-[24rem] lg:ml-auto"
+                      data-parallax="18"
+                      src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=1000&q=80"
+                      alt="Премиальная цветочная композиция"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="reveal mt-20 sm:mt-24">
+          <div class="mx-auto max-w-6xl overflow-hidden rounded-[34px] bg-wine px-4 py-7 text-white shadow-soft sm:rounded-[36px] sm:px-8 sm:py-10">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div class="max-w-2xl">
+                <span class="eyebrow text-[0.68rem] uppercase text-white/70">Избранное ателье</span>
+                <h2 class="section-title mt-3 max-w-[11ch] sm:max-w-none">Букеты, в которых видно работу руки</h2>
+                <p class="mt-3 text-sm leading-7 text-white/75 sm:text-base">
+                  Вместо перегруженного каталога мы показываем камерную подборку самых выразительных композиций: спокойные формы,
+                  дорогая палитра и ощущение собранности в каждой детали.
+                </p>
+              </div>
+              <a
+                class="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto"
+                href="#contact"
+              >
+                Подобрать персонально
+              </a>
+            </div>
+
+            <div class="mt-8">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs uppercase tracking-[0.3em] text-white/58" data-featured-counter aria-live="polite">01 / 06</span>
+                  <div class="h-px w-20 bg-white/15 sm:w-28">
+                    <div class="h-px bg-white/80 transition-[width] duration-500" data-featured-progress style="width: 16.67%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button class="carousel-control" type="button" data-featured-prev aria-label="Показать предыдущий букет">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                      <path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <button class="carousel-control" type="button" data-featured-next aria-label="Показать следующий букет">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                      <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-6 overflow-hidden">
+                <div class="featured-carousel-track stagger" data-featured-track></div>
+              </div>
+            </div>
+
+            <div class="mt-5 grid gap-4 md:grid-cols-[1fr_auto]">
+              <div class="rounded-[26px] border border-white/10 bg-white/[0.08] px-5 py-4 text-sm leading-6 text-white/75">
+                Для частных клиентов, брендов и свадеб мы собираем персональные композиции под интерьер, дресс-код события и характер получателя.
+                Если нужен не каталог, а точное эстетическое решение, команда ателье предложит индивидуальный подбор.
+              </div>
+              <a
+                class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-wine transition hover:bg-[#fff4ef]"
+                href="#contact"
+              >
+                Запросить подбор
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="reveal mt-20 sm:mt-24" id="story">
+          <div class="mx-auto max-w-5xl text-center">
+            <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">История бренда</span>
+            <h2 class="section-title mx-auto mt-3 max-w-[14ch] text-mulberry sm:max-w-none">
+              Укоренены в заботе. Выращены для красивых повседневных ритуалов.
+            </h2>
+            <p class="mx-auto mt-5 max-w-3xl text-[0.98rem] leading-7 text-cocoa sm:text-base">
+              «Донна Роза» — это студия для тех, кто любит выразительную простоту. Мы не гоняемся за объёмом, а ищем точную форму, которая
+              выглядит дорого и естественно одновременно. Каждый букет собирается вручную с вниманием к оттенку, движению стебля и упаковке.
+            </p>
+            <a
+              class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-wine/[0.15] bg-white/70 px-6 py-3.5 text-sm font-semibold text-wine shadow-card transition hover:-translate-y-0.5 hover:bg-white sm:w-auto"
+              href="#contact"
+            >
+              Назначить консультацию
+            </a>
+          </div>
+
+          <div class="stagger mx-auto mt-12 grid max-w-6xl gap-5 md:grid-cols-3">
+            <article class="glass soft-border rounded-[28px] p-6 shadow-card">
+              <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine text-white">01</div>
+              <h3 class="card-title text-wine">Редкие сорта</h3>
+              <p class="mt-3 text-sm leading-6 text-cocoa">
+                Работаем с фермерскими поставщиками и отбираем цветок с характерной фактурой и безупречной свежестью.
+              </p>
+            </article>
+            <article class="glass soft-border rounded-[28px] p-6 shadow-card">
+              <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine text-white">02</div>
+              <h3 class="card-title text-wine">Точная композиция</h3>
+              <p class="mt-3 text-sm leading-6 text-cocoa">
+                Упор на архитектуру букета: сбалансированный объём, деликатная асимметрия и грамотная работа с пустотой.
+              </p>
+            </article>
+            <article class="glass soft-border rounded-[28px] p-6 shadow-card">
+              <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine text-white">03</div>
+              <h3 class="card-title text-wine">Сервис ателье</h3>
+              <p class="mt-3 text-sm leading-6 text-cocoa">
+                Подбираем букет под интерьер, повод и характер получателя, чтобы композиция выглядела персонально и премиально.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="reveal mt-20 sm:mt-24" id="wedding">
+          <div class="mx-auto max-w-6xl overflow-hidden rounded-[36px] shadow-soft">
+            <div class="grid bg-[#f4e7e3] lg:grid-cols-[0.86fr_1.14fr]">
+              <div class="relative overflow-hidden px-6 py-8 sm:px-8 sm:py-10">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,0.7),transparent_22%),radial-gradient(circle_at_90%_75%,rgba(125,39,66,0.1),transparent_30%)]"></div>
+                <div class="relative">
+                  <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">Свадебная флористика</span>
+                  <h2 class="section-title mt-3 max-w-[12ch] text-mulberry sm:max-w-none">
+                    Оформление, которое подчёркивает историю пары, а не спорит с ней.
+                  </h2>
+                  <ul class="mt-6 space-y-3 text-[0.98rem] leading-7 text-cocoa sm:text-sm sm:leading-6">
+                    <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-wine"></span>Букет невесты и персональные флористические аксессуары</li>
+                    <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-wine"></span>Композиции для ужина, церемонии и welcome-зоны</li>
+                    <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-wine"></span>Эскизы, moodboard и сопровождение монтажа</li>
+                    <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-wine"></span>Работа в спокойной палитре: ivory, blush, dusty rose, soft terracotta</li>
+                  </ul>
+                  <a
+                    class="mt-7 inline-flex w-full items-center justify-center rounded-full bg-wine px-6 py-3.5 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-mulberry sm:w-auto"
+                    href="#contact"
+                  >
+                    Обсудить проект
+                  </a>
+                </div>
+              </div>
+              <div class="relative min-h-[22rem]">
+                <img
+                  class="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80"
+                  alt="Свадебная флористика в пастельной палитре"
+                />
+                <div class="absolute inset-0 bg-gradient-to-r from-wine/20 via-transparent to-transparent"></div>
+              </div>
+            </div>
+
+            <div class="grid gap-4 bg-wine px-6 py-7 text-white sm:grid-cols-3 sm:px-8">
+              <article class="rounded-[24px] border border-white/10 bg-white/[0.08] px-5 py-4">
+                <h3 class="font-display text-[2rem] leading-[0.95] sm:text-3xl">Семейные истории</h3>
+                <p class="mt-2 text-sm leading-6 text-white/75">Флористика, которая не выглядит шумно на фото и остаётся актуальной через годы.</p>
+              </article>
+              <article class="rounded-[24px] border border-white/10 bg-white/[0.08] px-5 py-4">
+                <h3 class="font-display text-[2rem] leading-[0.95] sm:text-3xl">Бутик-подход</h3>
+                <p class="mt-2 text-sm leading-6 text-white/75">Ограниченное число проектов в месяц, чтобы держать высокий уровень исполнения и внимания.</p>
+              </article>
+              <article class="rounded-[24px] border border-white/10 bg-white/[0.08] px-5 py-4">
+                <h3 class="font-display text-[2rem] leading-[0.95] sm:text-3xl">Живой цветок</h3>
+                <p class="mt-2 text-sm leading-6 text-white/75">Ставка на сорта с красивым раскрытием, благородным движением и натуральной палитрой.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="reveal mt-20 sm:mt-24" id="reviews">
+          <div class="mx-auto max-w-6xl">
+            <div class="text-center">
+              <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">Отзывы</span>
+              <h2 class="section-title mx-auto mt-3 max-w-[14ch] text-mulberry sm:max-w-none">Спокойная роскошь, которую замечают сразу</h2>
+              <p class="mx-auto mt-3 max-w-2xl text-[0.98rem] leading-7 text-cocoa sm:text-base">
+                Нас выбирают за чувство меры, безупречную свежесть и сервис, в котором нет суеты. Именно это и создаёт ощущение настоящего premium.
+              </p>
+            </div>
+
+            <div class="mt-10 grid gap-6 xl:grid-cols-[0.8fr_1.46fr_0.8fr]">
+              <article class="glass soft-border rounded-[30px] p-6 shadow-card sm:p-7">
+                <div class="flex items-center gap-3">
+                  <img
+                    class="h-12 w-12 rounded-full object-cover"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+                    alt="Аватар клиента Елена"
+                  />
+                  <div>
+                    <div class="font-semibold text-wine">Елена Р.</div>
+                    <div class="text-xs uppercase tracking-[0.2em] text-cocoa/70">частный заказ</div>
+                  </div>
+                </div>
+                <p class="mt-5 text-[1rem] leading-8 text-cocoa">
+                  Букет выглядел очень дорого и при этом естественно: никакой кричащей упаковки, идеальная палитра и ощущение, что композицию собрали лично под нас.
+                </p>
+                <div class="mt-6 border-t border-wine/[0.08] pt-4 text-xs uppercase tracking-[0.22em] text-cocoa/60">юбилейный букет • доставка день в день</div>
+              </article>
+
+              <article class="relative overflow-hidden rounded-[34px] bg-wine px-6 py-7 text-white shadow-soft sm:px-8 sm:py-9">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.08),transparent_34%)]"></div>
+                <div class="relative flex h-full flex-col justify-between">
+                  <div class="w-full max-w-[27rem] text-left">
+                    <div class="font-display text-6xl leading-none text-white/35 sm:text-7xl">“</div>
+                    <p class="mt-4 max-w-[15ch] font-display text-[1.95rem] leading-[0.98] tracking-[-0.018em] text-white sm:max-w-[16ch] sm:text-[2.1rem] xl:max-w-[19ch] xl:text-[2.35rem]">
+                      Донна Роза делает редкую вещь: флористика выглядит как естественная часть красивого пространства, а не как громкий декоративный жест.
+                    </p>
+                    <div class="mt-6 h-px w-16 bg-white/15"></div>
+                    <div class="mt-5 text-[0.78rem] uppercase tracking-[0.22em] text-white/70 sm:text-[0.82rem] sm:tracking-[0.24em]">Марина и Илья • свадебный проект</div>
+                  </div>
+                  <div class="relative mt-8 grid gap-3 xl:grid-cols-3 xl:gap-4">
+                    <div class="rounded-[22px] border border-white/10 bg-white/[0.08] px-4 py-4 text-center">
+                      <div class="font-display text-[2.35rem] leading-none text-white xl:text-[2.6rem]">4.9</div>
+                      <div class="mt-2 text-[0.62rem] uppercase leading-4 tracking-[0.2em] text-white/65 xl:text-xs xl:tracking-[0.22em]">средняя оценка</div>
+                    </div>
+                    <div class="rounded-[22px] border border-white/10 bg-white/[0.08] px-4 py-4 text-center">
+                      <div class="font-display text-[2.35rem] leading-none text-white xl:text-[2.6rem]">92%</div>
+                      <div class="mt-2 text-[0.62rem] uppercase leading-4 tracking-[0.2em] text-white/65 xl:text-xs xl:tracking-[0.22em]">повторных заказов</div>
+                    </div>
+                    <div class="rounded-[22px] border border-white/10 bg-white/[0.08] px-4 py-4 text-center">
+                      <div class="font-display whitespace-nowrap text-[2.2rem] leading-none text-white xl:text-[2.45rem]">90 <span class="text-[0.82em]">мин</span></div>
+                      <div class="mt-2 text-[0.62rem] uppercase leading-4 tracking-[0.2em] text-white/65 xl:text-xs xl:tracking-[0.22em]">доставка в центре</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="glass soft-border rounded-[30px] p-6 shadow-card sm:p-7">
+                <div class="flex items-center gap-3">
+                  <img
+                    class="h-12 w-12 rounded-full object-cover"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                    alt="Аватар клиента Антон"
+                  />
+                  <div>
+                    <div class="font-semibold text-wine">Антон К.</div>
+                    <div class="text-xs uppercase tracking-[0.2em] text-cocoa/70">корпоративный клиент</div>
+                  </div>
+                </div>
+                <p class="mt-5 text-[1rem] leading-8 text-cocoa">
+                  Заказываем интерьерные композиции для шоурума. Команда отлично чувствует бренд и всегда собирает флористику, которая выглядит статусно, чисто и современно.
+                </p>
+                <div class="mt-6 border-t border-wine/[0.08] pt-4 text-xs uppercase tracking-[0.22em] text-cocoa/60">интерьерная флористика • еженедельный сервис</div>
+              </article>
+            </div>
+
+            <div class="stagger mt-6 grid gap-4 sm:grid-cols-3">
+              <article class="rounded-[24px] bg-[#f7efe8] px-5 py-5 text-mulberry shadow-card">
+                <div class="font-display price-secondary text-wine">5.0</div>
+                <p class="mt-2 text-sm leading-6 text-cocoa">Клиенты отмечают чувство меры, чистую палитру и аккуратную упаковку без визуального шума.</p>
+              </article>
+              <article class="rounded-[24px] bg-[#f7efe8] px-5 py-5 text-mulberry shadow-card">
+                <div class="font-display text-[2.2rem] leading-[0.95] text-wine sm:text-4xl">Boutique</div>
+                <p class="mt-2 text-sm leading-6 text-cocoa">Берём ограниченное число событий и персональных заказов, чтобы держать качество на уровне ателье.</p>
+              </article>
+              <article class="rounded-[24px] bg-[#f7efe8] px-5 py-5 text-mulberry shadow-card">
+                <div class="font-display text-[2.2rem] leading-[0.95] text-wine sm:text-4xl">Fresh Daily</div>
+                <p class="mt-2 text-sm leading-6 text-cocoa">Каждый букет собирается из партии, отобранной под конкретный день, сезон и задачу клиента.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="reveal mt-20 sm:mt-24">
+          <div class="mx-auto max-w-6xl">
+            <div class="flex flex-col gap-3 text-center">
+              <span class="eyebrow text-[0.68rem] uppercase text-cocoa/70">Вдохновение</span>
+              <h2 class="section-title mx-auto max-w-[11ch] text-mulberry sm:max-w-none">Больше атмосферы в нашей ленте</h2>
+            </div>
+
+            <div class="stagger mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <a class="instagram-card group relative overflow-hidden rounded-[28px] shadow-card" href="#contact">
+                <img
+                  class="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
+                  src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=900&q=80"
+                  alt="Цветочная композиция в автомобиле"
+                />
+                <span class="absolute bottom-4 left-4 z-10 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:opacity-100">
+                  @donna_rosa_atelier
+                </span>
+              </a>
+              <a class="instagram-card group relative overflow-hidden rounded-[28px] shadow-card" href="#contact">
+                <img
+                  class="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
+                  src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=80"
+                  alt="Нежный букет в пастельных оттенках"
+                />
+                <span class="absolute bottom-4 left-4 z-10 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:opacity-100">
+                  Коллекция soft bloom
+                </span>
+              </a>
+              <a class="instagram-card group relative overflow-hidden rounded-[28px] shadow-card" href="#contact">
+                <img
+                  class="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
+                  src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=900&q=80"
+                  alt="Розовые розы в букете"
+                />
+                <span class="absolute bottom-4 left-4 z-10 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:opacity-100">
+                  Garden roses only
+                </span>
+              </a>
+              <a class="instagram-card group relative overflow-hidden rounded-[28px] shadow-card" href="#contact">
+                <img
+                  class="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
+                  src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=900&q=80"
+                  alt="Цветы в интерьерной вазе"
+                />
+                <span class="absolute bottom-4 left-4 z-10 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:opacity-100">
+                  Interior styling
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="relative overflow-hidden rounded-[34px] bg-wine bg-grain px-5 py-8 text-white shadow-soft sm:px-8 sm:py-10"
+        id="contact"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08),transparent_34%)]"></div>
+        <div class="relative mx-auto max-w-6xl">
+          <div class="max-w-3xl text-center sm:mx-auto">
+            <span class="eyebrow text-[0.68rem] uppercase text-white/70">Donna Rosa</span>
+            <h2 class="section-title mx-auto mt-3 max-w-[14ch] text-white sm:max-w-none">
+              Привезём свежие цветы, которые выглядят как часть красивой жизни.
+            </h2>
+            <p class="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">
+              Букеты на каждый день, подарочные композиции и флористика для событий. Работаем по Москве и ближайшему Подмосковью.
+            </p>
+            <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <a class="w-full rounded-full bg-white px-6 py-3.5 text-center font-semibold text-wine transition hover:bg-[#fff4ef] sm:w-auto" href="tel:+74951234567">
+                Позвонить
+              </a>
+              <a class="w-full rounded-full border border-white/20 px-6 py-3.5 text-center font-semibold text-white transition hover:bg-white/10 sm:w-auto" href="mailto:hello@donnarosa.ru">
+                Написать на почту
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-10 border-t border-white/[0.12] pt-8">
+            <div class="grid gap-8 md:grid-cols-[1fr_0.8fr_0.8fr_1fr]">
+              <div>
+                <div class="font-display text-3xl">Донна Роза</div>
+                <p class="mt-3 max-w-sm text-sm leading-7 text-white/[0.72]">
+                  Премиальный магазин цветов с авторским взглядом на минималистичную флористику и деликатный сервис.
+                </p>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/60">Меню</div>
+                <ul class="mt-3 space-y-2 text-sm text-white/[0.78]">
+                  <li><a class="transition hover:text-white" href="#catalog">Каталог</a></li>
+                  <li><a class="transition hover:text-white" href="#story">О бренде</a></li>
+                  <li><a class="transition hover:text-white" href="#wedding">События</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/60">Контакты</div>
+                <ul class="mt-3 space-y-2 text-sm text-white/[0.78]">
+                  <li>Москва, Патриаршие пруды</li>
+                  <li><a class="transition hover:text-white" href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+                  <li><a class="transition hover:text-white" href="mailto:hello@donnarosa.ru">hello@donnarosa.ru</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/60">Режим</div>
+                <p class="mt-3 text-sm leading-7 text-white/[0.78]">
+                  Ежедневно 09:00-22:00<br />
+                  Доставка день в день при заказе до 19:00
+                </p>
+              </div>
+            </div>
+            <div class="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.2em] text-white/[0.55] sm:flex-row sm:items-center sm:justify-between">
+              <span>© 2026 Donna Rosa</span>
+              <span>Премиальная флористика для частных и корпоративных клиентов</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Single source of truth for atelier products; easy to replace with CMS data later.
+      const featuredProducts = [
+        {
+          category: "Кремовая палитра",
+          badge: "Премиум",
+          badgeTone: "petal",
+          title: "Тихий крем",
+          description: "Французская роза, орхидея и гортензия в мягкой кремовой гамме.",
+          note: "Подходит для подарка, гостиной и деликатного интерьерного акцента.",
+          price: "9 800 ₽",
+          cta: "Подробнее",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=80",
+          alt: "Букет Тихий крем",
+          primary: false,
+        },
+        {
+          category: "Авторская композиция",
+          badge: "Сигнатура",
+          badgeTone: "ivory",
+          title: "Нежная линия",
+          description: "Пионовидная роза, маттиола и эвкалипт в пудровой гамме для интерьера и подарка с точным вкусом.",
+          note: "Пышная посадка без визуального шума и деликатная упаковка в тоне ivory.",
+          price: "11 900 ₽",
+          cta: "Выбрать букет",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1200&q=80",
+          alt: "Авторский букет Нежная линия",
+          primary: true,
+        },
+        {
+          category: "Воздушная фактура",
+          badge: "Выбор дня",
+          badgeTone: "petal",
+          title: "Пудровое облако",
+          description: "Пион, диантус и лёгкие акценты в dusty rose для эффектного, но мягкого подарка.",
+          note: "Деликатный силуэт без лишней пышности и тяжёлого декоративного жеста.",
+          price: "8 600 ₽",
+          cta: "Подробнее",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=900&q=80",
+          alt: "Букет Пудровое облако",
+          primary: false,
+        },
+        {
+          category: "Садовая серия",
+          badge: "Сезон",
+          badgeTone: "petal",
+          title: "Садовый шелк",
+          description: "Садовая роза, ранункулюс и лёгкая зелень в спокойной нюдовой подаче.",
+          note: "Для утренних визитов, благодарности и тёплых семейных поводов.",
+          price: "10 400 ₽",
+          cta: "Подробнее",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?auto=format&fit=crop&w=900&q=80",
+          alt: "Букет Садовый шелк",
+          primary: false,
+        },
+        {
+          category: "Выбор ателье",
+          badge: "Лимитированная",
+          badgeTone: "ivory",
+          title: "Вечерний пион",
+          description: "Объёмная композиция в холодной розовой гамме с мягким садовым движением.",
+          note: "Подходит для важного жеста, ужина дома и камерного праздника.",
+          price: "12 300 ₽",
+          cta: "Выбрать букет",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=80",
+          alt: "Букет Вечерний пион",
+          primary: true,
+        },
+        {
+          category: "Белая коллекция",
+          badge: "Классика",
+          badgeTone: "petal",
+          title: "Белая пауза",
+          description: "Белые розы, маттиола и мягкий зелёный ритм для сдержанного элегантного впечатления.",
+          note: "Чистый силуэт для офиса, свадьбы и современного светлого интерьера.",
+          price: "9 400 ₽",
+          cta: "Подробнее",
+          href: "#contact",
+          image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=900&q=80",
+          alt: "Букет Белая пауза",
+          primary: false,
+        },
+      ];
+
+      const featuredTrack = document.querySelector("[data-featured-track]");
+      const featuredCounter = document.querySelector("[data-featured-counter]");
+      const featuredProgress = document.querySelector("[data-featured-progress]");
+      const featuredPrevButton = document.querySelector("[data-featured-prev]");
+      const featuredNextButton = document.querySelector("[data-featured-next]");
+
+      if (featuredTrack && featuredCounter && featuredProgress && featuredPrevButton && featuredNextButton) {
+        const renderFeaturedProducts = () => {
+          featuredTrack.innerHTML = featuredProducts
+            .map((product) => {
+              const badgeClass =
+                product.badgeTone === "ivory"
+                  ? "bg-white text-wine shadow-[0_12px_30px_rgba(125,39,66,0.08)]"
+                  : "bg-petal text-wine";
+              const buttonClass = product.primary
+                ? "border border-transparent bg-wine text-white hover:bg-mulberry"
+                : "border border-wine/[0.15] text-wine hover:bg-wine hover:text-white";
+
+              return `
+                <article class="featured-product-card group rounded-[28px] bg-[#f7efe8] p-4 text-mulberry shadow-card sm:p-5" data-featured-card>
+                  <div class="overflow-hidden rounded-[22px] bg-petal/55">
+                    <img
+                      class="h-64 w-full object-cover transition duration-500 group-hover:scale-[1.03] sm:h-72"
+                      src="${product.image}"
+                      alt="${product.alt}"
+                    />
+                  </div>
+                  <div class="mt-4">
+                    <div class="flex flex-col gap-3 min-[520px]:flex-row min-[520px]:items-start min-[520px]:justify-between">
+                      <div class="min-w-0">
+                        <div class="eyebrow text-[0.68rem] uppercase text-cocoa/68">${product.category}</div>
+                        <h3 class="card-title mt-3 text-wine">${product.title}</h3>
+                      </div>
+                      <span class="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase leading-tight tracking-[0.18em] ${badgeClass}">
+                        ${product.badge}
+                      </span>
+                    </div>
+                    <p class="mt-3 text-sm leading-6 text-cocoa sm:text-[0.96rem]">${product.description}</p>
+                    <p class="mt-4 text-[0.92rem] leading-6 text-cocoa/70">${product.note}</p>
+                    <div class="mt-6 flex flex-col gap-3 min-[520px]:flex-row min-[520px]:items-center min-[520px]:justify-between">
+                      <div class="font-display price-secondary text-wine">${product.price}</div>
+                      <a class="inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition min-[520px]:w-auto ${buttonClass}" href="${product.href}">
+                        ${product.cta}
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              `;
+            })
+            .join("");
+        };
+
+        const getVisibleCards = () => {
+          if (window.innerWidth >= 1280) {
+            return 3;
+          }
+
+          if (window.innerWidth >= 1024) {
+            return 2;
+          }
+
+          return 1;
+        };
+
+        const getMaxStartIndex = () => Math.max(0, featuredProducts.length - getVisibleCards());
+
+        const getCardStep = () => {
+          const firstCard = featuredTrack.querySelector("[data-featured-card]");
+
+          if (!firstCard) {
+            return 0;
+          }
+
+          const gap = parseFloat(window.getComputedStyle(featuredTrack).gap || "0");
+          return firstCard.getBoundingClientRect().width + gap;
+        };
+
+        const getCurrentIndex = () => {
+          const step = getCardStep();
+
+          if (!step) {
+            return 0;
+          }
+
+          return Math.min(getMaxStartIndex(), Math.max(0, Math.round(featuredTrack.scrollLeft / step)));
+        };
+
+        const syncFeaturedCarousel = () => {
+          const currentIndex = getCurrentIndex();
+          const totalPositions = getMaxStartIndex() + 1;
+
+          featuredCounter.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(featuredProducts.length).padStart(2, "0")}`;
+          featuredProgress.style.width = `${((currentIndex + 1) / totalPositions) * 100}%`;
+          featuredPrevButton.disabled = currentIndex <= 0;
+          featuredNextButton.disabled = currentIndex >= getMaxStartIndex();
+        };
+
+        const scrollToFeaturedIndex = (index, behavior = "smooth") => {
+          const step = getCardStep();
+          const clampedIndex = Math.min(getMaxStartIndex(), Math.max(0, index));
+
+          featuredTrack.scrollTo({
+            left: step * clampedIndex,
+            behavior,
+          });
+        };
+
+        let featuredScrollFrame = null;
+
+        renderFeaturedProducts();
+        syncFeaturedCarousel();
+
+        featuredPrevButton.addEventListener("click", () => {
+          scrollToFeaturedIndex(getCurrentIndex() - 1);
+        });
+
+        featuredNextButton.addEventListener("click", () => {
+          scrollToFeaturedIndex(getCurrentIndex() + 1);
+        });
+
+        featuredTrack.addEventListener(
+          "scroll",
+          () => {
+            if (featuredScrollFrame) {
+              return;
+            }
+
+            featuredScrollFrame = window.requestAnimationFrame(() => {
+              syncFeaturedCarousel();
+              featuredScrollFrame = null;
+            });
+          },
+          { passive: true }
+        );
+
+        window.addEventListener("resize", () => {
+          scrollToFeaturedIndex(getCurrentIndex(), "auto");
+          syncFeaturedCarousel();
+        });
+      }
+
+      const mobileMenuButton = document.querySelector("#mobile-menu-button");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      if (mobileMenuButton && mobileMenu) {
+        const closeMobileMenu = () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", "false");
+        };
+
+        mobileMenuButton.addEventListener("click", () => {
+          const isOpen = mobileMenuButton.getAttribute("aria-expanded") === "true";
+          mobileMenu.classList.toggle("hidden", isOpen);
+          mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 640) {
+            closeMobileMenu();
+          }
+        });
+      }
+
+      const revealNodes = document.querySelectorAll(".reveal, .stagger");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -6% 0px",
+        }
+      );
+
+      revealNodes.forEach((node) => observer.observe(node));
+
+      const parallaxNodes = document.querySelectorAll("[data-parallax]");
+
+      const updateParallax = () => {
+        const viewportHeight = window.innerHeight || 1;
+
+        parallaxNodes.forEach((node) => {
+          const rect = node.getBoundingClientRect();
+          const speed = Number(node.dataset.parallax || 0);
+          const centerOffset = rect.top + rect.height / 2 - viewportHeight / 2;
+          const shift = (centerOffset / viewportHeight) * speed * -1;
+          node.style.setProperty("--shift", `${shift.toFixed(1)}px`);
+        });
+      };
+
+      updateParallax();
+      window.addEventListener("scroll", updateParallax, { passive: true });
+      window.addEventListener("resize", updateParallax);
+    </script>
+  </body>
+</html>
+
+
+
