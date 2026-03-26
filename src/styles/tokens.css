@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light;
+
+  /* Typography */
+  --font-family-display: "Cormorant Garamond", Georgia, serif;
+  --font-family-body: "Manrope", "Segoe UI", sans-serif;
+
+  --font-size-label: 0.75rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-body: 1rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-title-sm: 1.5rem;
+  --font-size-title-md: 1.75rem;
+  --font-size-heading-sm: 2rem;
+  --font-size-heading-md: 2.5rem;
+  --font-size-heading-lg: 3rem;
+  --font-size-display: 4.5rem;
+
+  --line-height-tight: 0.94;
+  --line-height-heading: 1.02;
+  --line-height-body: 1.7;
+  --line-height-body-loose: 1.8;
+
+  --letter-spacing-label: 0.12em;
+  --letter-spacing-tight: -0.02em;
+
+  /* Primitive palette */
+  --rose-050: #fbf6f3;
+  --rose-100: #f6ece6;
+  --rose-150: #f1e3df;
+  --rose-200: #ead7da;
+  --rose-300: #ddc0c8;
+  --rose-400: #c99aa9;
+  --rose-500: #b47d8d;
+  --rose-600: #946274;
+  --rose-700: #744956;
+  --rose-800: #523640;
+
+  --cream-050: #fffaf7;
+  --cream-100: #fff6f1;
+  --cream-200: #f8eee8;
+  --cream-300: #efe2da;
+
+  --sage-100: #e4ebe3;
+  --warm-100: #e5d2bb;
+
+  /* Semantic colors */
+  --color-page-bg: var(--rose-050);
+  --color-page-bg-alt: var(--rose-100);
+  --color-surface: rgba(255, 249, 246, 0.88);
+  --color-surface-strong: #fff9f6;
+  --color-surface-muted: #f8f0ea;
+  --color-surface-tint: #f1e2e6;
+
+  --color-border-subtle: rgba(116, 73, 86, 0.12);
+  --color-border-strong: rgba(116, 73, 86, 0.22);
+
+  --color-text-primary: #47353e;
+  --color-text-secondary: #75656d;
+  --color-text-tertiary: #9a8b93;
+
+  --color-action-primary: #8d5868;
+  --color-action-primary-hover: #744956;
+  --color-action-secondary: rgba(255, 255, 255, 0.82);
+  --color-action-secondary-hover: rgba(241, 226, 230, 0.92);
+  --color-action-secondary-text: #744956;
+  --color-focus-ring: rgba(180, 125, 141, 0.5);
+
+  --color-success: #66816d;
+  --color-warning: #b28d57;
+  --color-error: #a05d6d;
+
+  /* Brand accents */
+  --color-brand-donna: #ba8f9f;
+  --color-brand-donna-soft: #ecd8dd;
+  --color-brand-lsun: #8d5868;
+  --color-brand-lsun-soft: #efe5e8;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-28: 7rem;
+
+  /* Radius */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.125rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-hero: 2.5rem;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-1: 0 10px 30px rgba(83, 50, 62, 0.06);
+  --shadow-2: 0 16px 38px rgba(83, 50, 62, 0.1);
+  --shadow-3: 0 24px 54px rgba(83, 50, 62, 0.14);
+
+  /* Layout */
+  --container-max: 75rem;
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 1.25rem;
+  --container-padding-desktop: 1.5rem;
+  --grid-gap-mobile: 1rem;
+  --grid-gap-desktop: 1.5rem;
+
+  /* Motion */
+  --motion-fast: 180ms ease;
+  --motion-base: 240ms ease;
+  --motion-slow: 420ms ease;
+
+  /* Layering */
+  --z-base: 1;
+  --z-header: 30;
+  --z-floating: 40;
+}
+
+[data-brand="donna"] {
+  --color-brand-accent: var(--color-brand-donna);
+  --color-brand-accent-soft: var(--color-brand-donna-soft);
+}
+
+[data-brand="lsun"] {
+  --color-brand-accent: var(--color-brand-lsun);
+  --color-brand-accent-soft: var(--color-brand-lsun-soft);
+}
+
+@media (max-width: 63.99rem) {
+  :root {
+    --font-size-display: 3.5rem;
+    --font-size-heading-lg: 2.5rem;
+    --font-size-heading-md: 2.125rem;
+    --font-size-heading-sm: 1.75rem;
+    --font-size-title-md: 1.5rem;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  :root {
+    --font-size-display: 2.5rem;
+    --font-size-heading-lg: 2rem;
+    --font-size-heading-md: 1.75rem;
+    --font-size-heading-sm: 1.5rem;
+    --font-size-body-lg: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 1ms linear;
+    --motion-base: 1ms linear;
+    --motion-slow: 1ms linear;
+  }
+}
